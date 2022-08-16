@@ -6,8 +6,7 @@ const StyledTabBarItem = styled.div`
   width: 145px;
   height: 40px;
   font-size: 16px;
-  border: solid 1px;
-  border-radius: 20px;
+  border-bottom: solid 1px;
 `;
 
 const StyledTabBarButton = styled.button`
