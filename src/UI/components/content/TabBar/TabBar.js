@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import TabBarItem from "./TabBarItem/TabBarItem";
-import { StyledContent } from "./views";
-import { StyledTabContainer } from "./views";
-import { StyledTabItems } from "./views";
+import { StyledContent, StyledTabContainer, StyledTabItems } from "./views";
 import { TAB_CONTENT, TAB_NAMES } from "../../../../constants/TabBar";
 
 
