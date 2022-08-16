@@ -1,5 +1,3 @@
-const tabNames = ["ItemOne", "ItemTwo", "ItemThree"];
+export const TAB_NAMES = ["ItemOne", "ItemTwo", "ItemThree"];
 
-export const tabContent = ["ContentOne", "ContentTwo", "ContentThree"];
-
-export default tabNames;
+export const TAB_CONTENT = ["ContentOne", "ContentTwo", "ContentThree"];

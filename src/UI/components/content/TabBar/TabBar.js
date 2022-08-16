@@ -3,29 +3,29 @@ import TabBarItem from "./TabBarItem/TabBarItem";
 import { StyledContent } from "./views";
 import { StyledTabContainer } from "./views";
 import { StyledTabItems } from "./views";
-import tabNames from "../../../../constants/TabBar";
-import { tabContent } from "../../../../constants/TabBar";
+import { TAB_CONTENT, TAB_NAMES } from "../../../../constants/TabBar";
 
-const TabBar = (props) => {
+
+const TabBar = () => {
   const [content, setContent] = useState("");
 
   return (
     <StyledTabContainer>
       <StyledTabItems>
         <TabBarItem
-          name={tabNames[0]}
+          name={TAB_NAMES[0]}
           setContent={setContent}
-          content={tabContent[0]}
+          content={TAB_CONTENT[0]}
         />
         <TabBarItem
-          name={tabNames[1]}
+          name={TAB_NAMES[1]}
           setContent={setContent}
-          content={tabContent[1]}
+          content={TAB_CONTENT[1]}
         />
         <TabBarItem
-          name={tabNames[2]}
+          name={TAB_NAMES[2]}
           setContent={setContent}
-          content={tabContent[2]}
+          content={TAB_CONTENT[2]}
         />
       </StyledTabItems>
       <StyledContent>{content}</StyledContent>
