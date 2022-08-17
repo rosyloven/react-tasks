@@ -1,3 +1,6 @@
-export const TAB_NAMES = ["ItemOne", "ItemTwo", "ItemThree"];
+export const TAB_DATA = [
+  {id: "1", itemName: "ItemOne", content: "ContentOne"},
+  {id: "2", itemName: "ItemTwo", content: "ContentTwo"},
+  {id: "3", itemName: "ItemThree", content: "ContentThree"}
+];
 
-export const TAB_CONTENT = ["ContentOne", "ContentTwo", "ContentThree"];

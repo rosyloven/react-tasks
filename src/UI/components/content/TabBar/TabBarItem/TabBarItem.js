@@ -17,12 +17,15 @@ const StyledTabBarButton = styled.button`
   }
 `
 
-const TabBarItem = (props) => {
+const TabBarItem = ({ setContent, name, content }) => {
+
+  const setContentValue = () => setContent(content)
+
   return (
     <StyledTabBarButton
-      onClick={() => props.setContent(props.content)}
+      onClick={() => setContentValue()}
     >
-      <StyledTabBarItem>{props.name}</StyledTabBarItem>
+      <StyledTabBarItem>{name}</StyledTabBarItem>
     </StyledTabBarButton>
   );
 };
