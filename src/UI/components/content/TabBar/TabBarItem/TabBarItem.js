@@ -1,5 +1,5 @@
-import React from "react";
-import styled, { css } from "styled-components";
+import React from 'react'
+import styled, { css } from 'styled-components'
 
 const StyledTabBarItem = styled.div`
   display: inline-flex;
@@ -12,17 +12,18 @@ const StyledTabBarItem = styled.div`
   color: #868686;
   cursor: pointer;
 
-  ${( { isActive } ) =>
+  ${({ isActive }) =>
     isActive &&
     css`
       color: dodgerblue;
       border-bottom: solid 2.5px cornflowerblue;
     `};
-`;
+`
 
 const TabBarItem = ({ name, onSetActiveTab, isActive }) => (
-    <StyledTabBarItem onClick={onSetActiveTab} isActive={isActive}>
-      {name}</StyledTabBarItem>
-);
+  <StyledTabBarItem onClick={onSetActiveTab} isActive={isActive}>
+    {name}
+  </StyledTabBarItem>
+)
 
-export default TabBarItem;
+export default TabBarItem
