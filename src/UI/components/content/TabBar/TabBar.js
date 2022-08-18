@@ -1,12 +1,13 @@
-import React from "react";
-import TabBarItem from "./TabBarItem/TabBarItem";
-import { StyledContent, StyledTabContainer, StyledTabItems } from "./views";
-import { TAB_DATA } from "../../../../constants/TabBar";
+import React from 'react'
+import TabBarItem from './TabBarItem/TabBarItem'
+import { StyledContent, StyledTabContainer, StyledTabItems } from './views'
+import { TAB_DATA } from '../../../../constants/TabBar'
+import Accordion from './Accordion/Accordion'
 
 const TabBar = () => {
-  const [activeTab, setActiveTab] = React.useState("id_1");
+  const [activeTab, setActiveTab] = React.useState('id_1')
 
-  const onSetActiveTab = (activeTab) => () => setActiveTab(activeTab);
+  const onSetActiveTab = (activeTab) => () => setActiveTab(activeTab)
 
   return (
     <StyledTabContainer>
@@ -21,12 +22,12 @@ const TabBar = () => {
         ))}
       </StyledTabItems>
       <StyledContent>
-        {activeTab === "id_1" && <div>Content1</div>}
-        {activeTab === "id_2" && <div>Content2</div>}
-        {activeTab === "id_3" && <div>Content3</div>}
+        {activeTab === 'id_1' && <div>Content1</div>}
+        {activeTab === 'id_2' && <Accordion />}
+        {activeTab === 'id_3' && <div>Content3</div>}
       </StyledContent>
     </StyledTabContainer>
-  );
-};
+  )
+}
 
-export default TabBar;
+export default TabBar
