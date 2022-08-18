@@ -1,6 +1,5 @@
 export const TAB_DATA = [
-  {id: "1", itemName: "ItemOne", content: "ContentOne"},
-  {id: "2", itemName: "ItemTwo", content: "ContentTwo"},
-  {id: "3", itemName: "ItemThree", content: "ContentThree"}
+  { id: "id_1", itemName: "ItemOne" },
+  { id: "id_2", itemName: "ItemTwo" },
+  { id: "id_3", itemName: "ItemThree" },
 ];
-
