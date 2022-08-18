@@ -7,6 +7,7 @@ export const StyledTabContainer = styled.div`
   max-width: 700px;
   border: 1px solid #868686;
   border-radius: 10px;
+  margin: auto;
 `;
 export const StyledTabItems = styled.div`
   margin: 25px 0px 25px 25px;

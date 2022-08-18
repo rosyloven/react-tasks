@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Content from "./UI/components/content/Content";
-import Header from "./UI/components/header/Header";
 
 const AppWrapper = styled.div`
   width: 100%;
@@ -13,7 +12,6 @@ const AppWrapper = styled.div`
 function App() {
   return (
     <AppWrapper>
-      <Header />
       <Content />
     </AppWrapper>
   );

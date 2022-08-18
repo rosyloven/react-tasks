@@ -6,7 +6,7 @@ import { TAB_DATA } from "../../../../constants/TabBar";
 const TabBar = () => {
   const [activeTab, setActiveTab] = React.useState("id_1");
 
-  const onSetActiveTab = (activeTab) => setActiveTab(activeTab);
+  const onSetActiveTab = (activeTab) => () => setActiveTab(activeTab);
 
   return (
     <StyledTabContainer>
@@ -14,7 +14,7 @@ const TabBar = () => {
         {TAB_DATA.map((tab) => (
           <TabBarItem
             isActive={activeTab === tab.id}
-            onSetActiveTab={() => onSetActiveTab(tab.id)}
+            onSetActiveTab={onSetActiveTab(tab.id)}
             name={tab.itemName}
             key={tab.id}
           />

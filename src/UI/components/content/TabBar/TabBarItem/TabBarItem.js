@@ -2,30 +2,26 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 const StyledTabBarItem = styled.div`
-  display: inline-block;
-  width: 100px;
-  height: 40px;
+  display: inline-flex;
+  width: 80px;
+  justify-content: center;
+  padding-bottom: 30px;
+  height: 20px;
   font-size: 15px;
   border-bottom: solid 1px;
   color: #868686;
+  cursor: pointer;
 
-  ${(props) =>
-    props.isActive &&
+  ${( { isActive } ) =>
+    isActive &&
     css`
       color: dodgerblue;
       border-bottom: solid 2.5px cornflowerblue;
     `};
 `;
 
-const StyledTabBarButton = styled.button`
-  color: #3f3f3f;
-  background: none;
-`;
-
 const TabBarItem = ({ name, onSetActiveTab, isActive }) => (
-  <StyledTabBarButton onClick={onSetActiveTab}>
-    <StyledTabBarItem isActive={isActive}>{name}</StyledTabBarItem>
-  </StyledTabBarButton>
+    <StyledTabBarItem onClick={onSetActiveTab} isActive={isActive}>{name}</StyledTabBarItem>
 );
 
 export default TabBarItem;
