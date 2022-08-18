@@ -21,7 +21,8 @@ const StyledTabBarItem = styled.div`
 `;
 
 const TabBarItem = ({ name, onSetActiveTab, isActive }) => (
-    <StyledTabBarItem onClick={onSetActiveTab} isActive={isActive}>{name}</StyledTabBarItem>
+    <StyledTabBarItem onClick={onSetActiveTab} isActive={isActive}>
+      {name}</StyledTabBarItem>
 );
 
 export default TabBarItem;
