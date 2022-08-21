@@ -1,27 +1,6 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
-
-const StyledAccordionItem = styled.div`
-  display: inline-flex;
-  font-size: 15px;
-  border: 0.1px solid #868686;
-  width: 650px;
-  height: 40px;
-  border-radius: 4px 4px 0px 0px;
-  cursor: pointer;
-  background: aliceblue;
-  box-shadow: 0.1px 0.1px 1px #d3d3d3;
-  align-items: center;
-
-  ${({ isActive }) =>
-    isActive &&
-    css`
-      height: 80px;
-    `};
-`
-const StyledContent = styled.div`
-  margin-left: 30px;
-`
+import { ACCORDION_DATA } from '../../../../../../constants/TabBar'
+import { StyledAccordionItem, StyledContent, StyledName } from './views'
 
 const AccordionItem = ({
   name,
@@ -30,9 +9,11 @@ const AccordionItem = ({
   activeAccordion,
 }) => (
   <StyledAccordionItem onClick={onSetActiveAccordion} isActive={isActive}>
-    {name}
+    <StyledName>{name}</StyledName>
     <StyledContent>
-      {activeAccordion === 'id_1' && <div>Content1</div>}
+      {isActive ? activeAccordion === 'id_1' && ACCORDION_DATA[0].content : ''}
+      {isActive ? activeAccordion === 'id_2' && ACCORDION_DATA[1].content : ''}
+      {isActive ? activeAccordion === 'id_3' && ACCORDION_DATA[2].content : ''}
     </StyledContent>
   </StyledAccordionItem>
 )
