@@ -9,7 +9,7 @@ export const StyledTitleContainer = styled.div`
   background: aliceblue;
   box-shadow: 0.1px 0.1px 1px #d3d3d3;
   justify-content: space-between;
-  border-radius: ${({ radius }) => radius || '0px 0px 0px 0px'};
+  border: 0.1px solid #d3d3d3;
 
   ${({ isActive }) =>
     isActive &&
@@ -38,6 +38,7 @@ export const StyledContentContainer = styled.div`
     css`
       height: 50px;
       box-shadow: 0.1px 0.1px 1px #d3d3d3;
+      background: #f3f9ff;
     `};
 `
 
