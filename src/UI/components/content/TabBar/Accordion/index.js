@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { ACCORDION_DATA } from '../../../../../constants/TabBar'
-import AccordionItem from './AccordionItem/AccordionItem'
+import AccordionItem from './AccordionItem'
 
 const StyledAccordionContainer = styled.div`
   display: inline-flex;
@@ -14,7 +14,7 @@ const Accordion = () => {
   return (
     <StyledAccordionContainer>
       {ACCORDION_DATA.map((acrd) => (
-        <AccordionItem key={acrd.id} title={acrd.name} content={acrd.content} />
+        <AccordionItem id={acrd.id} title={acrd.name} content={acrd.content} />
       ))}
     </StyledAccordionContainer>
   )

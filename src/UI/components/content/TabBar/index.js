@@ -1,8 +1,8 @@
 import React from 'react'
-import TabBarItem from './TabBarItem/TabBarItem'
+import TabBarItem from './TabBarItem'
 import { StyledContent, StyledTabContainer, StyledTabItems } from './views'
 import { TAB_DATA } from '../../../../constants/TabBar'
-import Accordion from './Accordion/Accordion'
+import Accordion from './Accordion'
 
 const TabBar = () => {
   const [activeTab, setActiveTab] = React.useState('id_1')

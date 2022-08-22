@@ -8,25 +8,25 @@ import {
   StyledViewer,
 } from './views'
 
-const AccordionItem = ({ title, key, content }) => {
-  const [activeAccordion, setActiveAccordion] = React.useState(true)
+const AccordionItem = ({ title, id, content }) => {
+  const [activeAccordion, setActiveAccordion] = React.useState(false)
 
-  const isActive = activeAccordion === key
+  const isActive = activeAccordion === id
 
   return (
     <StyledAccordionItem
-      onClick={() =>
-        activeAccordion ? setActiveAccordion(key) : setActiveAccordion(!key)
-      }
+      onClick={() => setActiveAccordion(activeAccordion ? !id : id)}
       isActive={isActive}
     >
       <StyledTitleContainer>
         <StyledTitle>{title}</StyledTitle>
         <StyledViewer>{isActive ? '-' : '+'}</StyledViewer>
       </StyledTitleContainer>
-      <StyledContentContainer isActive={isActive}>
-        <StyledContent>{activeAccordion === key && content}</StyledContent>
-      </StyledContentContainer>
+      {isActive && (
+        <StyledContentContainer isActive={isActive}>
+          <StyledContent>{activeAccordion === id && content}</StyledContent>
+        </StyledContentContainer>
+      )}
     </StyledAccordionItem>
   )
 }
