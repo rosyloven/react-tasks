@@ -2,7 +2,9 @@ import React from 'react'
 import {
   StyledAccordionItem,
   StyledContent,
+  StyledContentContainer,
   StyledTitle,
+  StyledTitleContainer,
   StyledViewer,
 } from './views'
 
@@ -18,9 +20,13 @@ const AccordionItem = ({ title, key, content }) => {
       }
       isActive={isActive}
     >
-      <StyledTitle>{title}</StyledTitle>
-      <StyledViewer>{isActive ? '-' : '+'}</StyledViewer>
-      <StyledContent>{activeAccordion === key && content}</StyledContent>
+      <StyledTitleContainer>
+        <StyledTitle>{title}</StyledTitle>
+        <StyledViewer>{isActive ? '-' : '+'}</StyledViewer>
+      </StyledTitleContainer>
+      <StyledContentContainer isActive={isActive}>
+        <StyledContent>{activeAccordion === key && content}</StyledContent>
+      </StyledContentContainer>
     </StyledAccordionItem>
   )
 }
