@@ -27,9 +27,14 @@ export const StyledContent = styled.div`
   align-items: center;
   min-height: 20px;
 `
-export const StyledName = styled.div`
-  margin: 0px 0px 5px 15px;
+export const StyledTitle = styled.div`
+  margin: 0 0 5px 15px;
   display: flex;
   height: 40px;
   align-items: center;
+`
+
+export const StyledViewer = styled.div`
+  display: flex;
+  align-items: flex-end;
 `

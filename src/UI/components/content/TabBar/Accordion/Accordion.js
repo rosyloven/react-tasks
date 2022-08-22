@@ -15,21 +15,14 @@ const StyledAccordionItem = styled.div`
 `
 
 const Accordion = () => {
-  const [activeAccordion, setActiveAccordion] = React.useState('')
-
-  const onSetActiveAccordion = (activeAccordion) => () =>
-    setActiveAccordion(activeAccordion)
-
   return (
     <StyledAccordionContainer>
       <StyledAccordionItem>
         {ACCORDION_DATA.map((acrd) => (
           <AccordionItem
             key={acrd.id}
-            name={acrd.name}
-            onSetActiveAccordion={onSetActiveAccordion(acrd.id)}
-            isActive={activeAccordion === acrd.id}
-            activeAccordion={activeAccordion}
+            title={acrd.name}
+            content={acrd.content}
           />
         ))}
       </StyledAccordionItem>
