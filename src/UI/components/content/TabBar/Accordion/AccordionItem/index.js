@@ -2,31 +2,26 @@ import React from 'react'
 import {
   StyledAccordionItem,
   StyledContent,
-  StyledContentContainer,
   StyledTitle,
   StyledTitleContainer,
   StyledViewer,
 } from './views'
 
-const AccordionItem = ({ title, id, content }) => {
+const AccordionItem = ({ title, content }) => {
   const [activeAccordion, setActiveAccordion] = React.useState(false)
 
-  const isActive = activeAccordion === id
+  const isActive = activeAccordion
 
   return (
     <StyledAccordionItem
-      onClick={() => setActiveAccordion(activeAccordion ? !id : id)}
+      onClick={() => setActiveAccordion(!isActive)}
       isActive={isActive}
     >
       <StyledTitleContainer>
         <StyledTitle>{title}</StyledTitle>
         <StyledViewer>{isActive ? '-' : '+'}</StyledViewer>
       </StyledTitleContainer>
-      {isActive && (
-        <StyledContentContainer isActive={isActive}>
-          <StyledContent>{activeAccordion === id && content}</StyledContent>
-        </StyledContentContainer>
-      )}
+      {isActive && <StyledContent isActive={isActive}>{content}</StyledContent>}
     </StyledAccordionItem>
   )
 }

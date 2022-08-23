@@ -5,19 +5,16 @@ import AccordionItem from './AccordionItem'
 
 const StyledAccordionContainer = styled.div`
   display: inline-flex;
-  opacity: 86%;
   flex-flow: column;
   min-height: 300px;
 `
 
-const Accordion = () => {
-  return (
-    <StyledAccordionContainer>
-      {ACCORDION_DATA.map((acrd) => (
-        <AccordionItem id={acrd.id} title={acrd.name} content={acrd.content} />
-      ))}
-    </StyledAccordionContainer>
-  )
-}
+const Accordion = () => (
+  <StyledAccordionContainer>
+    {ACCORDION_DATA.map((acrd) => (
+      <AccordionItem key={acrd.id} title={acrd.name} content={acrd.content} />
+    ))}
+  </StyledAccordionContainer>
+)
 
 export default Accordion

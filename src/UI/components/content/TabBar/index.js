@@ -23,11 +23,7 @@ const TabBar = () => {
       </StyledTabItems>
       <StyledContent>
         {activeTab === 'id_1' && <div>Content1</div>}
-        {activeTab === 'id_2' && (
-          <>
-            <Accordion />
-          </>
-        )}
+        {activeTab === 'id_2' && <Accordion />}
         {activeTab === 'id_3' && <div>Content3</div>}
       </StyledContent>
     </StyledTabContainer>

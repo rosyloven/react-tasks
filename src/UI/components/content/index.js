@@ -2,11 +2,7 @@ import React from 'react'
 import TabBar from './TabBar'
 
 const Content = () => {
-  return (
-    <>
-      <TabBar />
-    </>
-  )
+  return <TabBar />
 }
 
 export default Content
