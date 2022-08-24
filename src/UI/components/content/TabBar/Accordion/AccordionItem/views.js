@@ -38,4 +38,15 @@ export const StyledTitle = styled.div`
 
 export const StyledViewer = styled.div`
   margin: 17px 15px 0 0;
+
+  img {
+    width: 14px;
+  }
+  ${({ isActive }) =>
+    isActive &&
+    css`
+      img {
+        transform: rotate(180deg);
+      }
+    `};
 `

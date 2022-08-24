@@ -10,18 +10,23 @@ import {
 const AccordionItem = ({ title, content }) => {
   const [activeAccordion, setActiveAccordion] = React.useState(false)
 
-  const isActive = activeAccordion
-
   return (
     <StyledAccordionItem
-      onClick={() => setActiveAccordion(!isActive)}
-      isActive={isActive}
+      onClick={() => setActiveAccordion(!activeAccordion)}
+      isActive={activeAccordion}
     >
       <StyledTitleContainer>
         <StyledTitle>{title}</StyledTitle>
-        <StyledViewer>{isActive ? '-' : '+'}</StyledViewer>
+        <StyledViewer isActive={activeAccordion}>
+          <img
+            src='https://cdn0.iconfinder.com/data/icons/leading-international-corporate-website-app-collec/16/Expand_accordion-512.png'
+            alt='arrow'
+          />
+        </StyledViewer>
       </StyledTitleContainer>
-      {isActive && <StyledContent isActive={isActive}>{content}</StyledContent>}
+      {activeAccordion && (
+        <StyledContent isActive={activeAccordion}>{content}</StyledContent>
+      )}
     </StyledAccordionItem>
   )
 }

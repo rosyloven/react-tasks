@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 export const StyledTabContainer = styled.div`
   font-family: Arial;
+  display: flex;
+  flex-flow: column;
   color: #3f3f3f;
   height: 430px;
   max-width: 700px;
@@ -10,8 +12,9 @@ export const StyledTabContainer = styled.div`
   margin: auto;
 `
 export const StyledTabItems = styled.div`
-  margin: 25px 0px 25px 25px;
-  text-align: left;
+  margin: 25px;
+  display: flex;
+  justify-content: space-between;
 `
 export const StyledContent = styled.div`
   margin-left: 25px;

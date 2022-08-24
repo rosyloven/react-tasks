@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Index from './UI/components/content'
+import Content from './UI/components/content'
 
 const AppWrapper = styled.div`
   width: 100%;
@@ -12,7 +12,7 @@ const AppWrapper = styled.div`
 function App() {
   return (
     <AppWrapper>
-      <Index />
+      <Content />
     </AppWrapper>
   )
 }
