@@ -3,6 +3,7 @@ import TabBarItem from './TabBarItem'
 import { StyledContent, StyledTabContainer, StyledTabItems } from './views'
 import { TAB_DATA } from '../../../../constants/TabBar'
 import Accordion from './Accordion'
+import Table from './Table'
 
 const TabBar = () => {
   const [activeTab, setActiveTab] = React.useState('id_1')
@@ -24,7 +25,7 @@ const TabBar = () => {
       <StyledContent>
         {activeTab === 'id_1' && <div>Content1</div>}
         {activeTab === 'id_2' && <Accordion />}
-        {activeTab === 'id_3' && <div>Content3</div>}
+        {activeTab === 'id_3' && <Table />}
       </StyledContent>
     </StyledTabContainer>
   )

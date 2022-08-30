@@ -1,11 +1,15 @@
 import React from 'react'
 import {
   StyledAccordionItem,
+  StyledArrow,
   StyledContent,
   StyledTitle,
   StyledTitleContainer,
   StyledViewer,
 } from './views'
+
+const ARROW_URL =
+  'https://cdn0.iconfinder.com/data/icons/leading-international-corporate-website-app-collec/16/Expand_accordion-512.png'
 
 const AccordionItem = ({ title, content }) => {
   const [activeAccordion, setActiveAccordion] = React.useState(false)
@@ -18,10 +22,7 @@ const AccordionItem = ({ title, content }) => {
       <StyledTitleContainer>
         <StyledTitle>{title}</StyledTitle>
         <StyledViewer isActive={activeAccordion}>
-          <img
-            src='https://cdn0.iconfinder.com/data/icons/leading-international-corporate-website-app-collec/16/Expand_accordion-512.png'
-            alt='arrow'
-          />
+          <StyledArrow src={ARROW_URL} alt='arrow' />
         </StyledViewer>
       </StyledTitleContainer>
       {activeAccordion && (

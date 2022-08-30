@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 export const StyledTitleContainer = styled.div`
   display: flex;
   font-size: 15px;
-  width: 650px;
+  width: 97.5vh;
   height: 50px;
   cursor: pointer;
   background: aliceblue;
@@ -49,4 +49,14 @@ export const StyledViewer = styled.div`
         transform: rotate(180deg);
       }
     `};
+`
+
+export const StyledArrow = styled.img`
+  width: 14px;
+
+  ${({ isActive }) =>
+    isActive &&
+    css`
+      transform: rotate(180deg);
+    `}
 `
