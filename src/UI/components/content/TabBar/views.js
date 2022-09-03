@@ -18,5 +18,5 @@ export const StyledTabItems = styled.div`
 `
 export const StyledContent = styled.div`
   margin-left: 25px;
-  width: 97.5vh;
+  width: 750px;
 `

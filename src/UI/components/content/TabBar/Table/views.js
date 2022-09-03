@@ -2,26 +2,13 @@ import styled from 'styled-components'
 
 export const StyledTableContainer = styled.div`
   display: grid;
-  grid-auto-flow: row;
-  max-height: 700px;
   border: 0.1px solid #d3d3d3;
   background: aliceblue;
   box-shadow: 0.1px 0.1px 1px #d3d3d3;
-`
-export const StyledTableHead = styled.div`
-  display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-  height: 50px;
-  border-bottom: 0.1px solid #d3d3d3;
-`
-
-export const StyledTableBody = styled.div`
+  width: 800px;
   text-align: center;
-  display: grid;
-  grid-auto-flow: row;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  width: 60px;
+  grid-template: repeat(10, 1fr) / repeat(8, 1fr);
+  align-items: center;
 `
 
 export const StyledTableCell = styled.div`
@@ -31,4 +18,5 @@ export const StyledTableCell = styled.div`
   height: 50px;
   align-items: center;
   border-bottom: 0.1px solid #d3d3d3;
+  font-weight: ${({ font }) => font || '400'};
 `

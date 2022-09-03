@@ -1,35 +1,31 @@
 import React from 'react'
 import { TABLE_DATA, TABLE_TITLES } from '../../../../../constants/TabBar'
-import TableHeadItem from './TableHeadItem'
-import {
-  StyledTableBody,
-  StyledTableCell,
-  StyledTableContainer,
-  StyledTableHead,
-} from './views'
+import { StyledTableCell, StyledTableContainer } from './views'
+
+const preparedData = TABLE_DATA.map((person) => Object.values(person))
+
+console.log(preparedData)
 
 const Table = () => {
   return (
     <StyledTableContainer>
-      <StyledTableHead>
-        {TABLE_TITLES.map((title) => (
-          <TableHeadItem key={title.id} name={title.name} />
-        ))}
-      </StyledTableHead>
-      <StyledTableBody>
-        {TABLE_DATA.map((person) => (
-          <>
-            <StyledTableCell>{person.name}</StyledTableCell>
-            <StyledTableCell>{person.height}</StyledTableCell>
-            <StyledTableCell>{person.mass}</StyledTableCell>
-            <StyledTableCell>{person.hair_color}</StyledTableCell>
-            <StyledTableCell>{person.skin_color}</StyledTableCell>
-            <StyledTableCell>{person.eye_color}</StyledTableCell>
-            <StyledTableCell>{person.birth_year}</StyledTableCell>
-            <StyledTableCell>{person.gender}</StyledTableCell>
-          </>
-        ))}
-      </StyledTableBody>
+      {TABLE_TITLES.map((title, index) => (
+        <StyledTableCell key={index} font={'700'}>
+          {title}
+        </StyledTableCell>
+      ))}
+      {preparedData.map((el, index, array) => (
+        <>
+          <StyledTableCell key={index}>{el[0]}</StyledTableCell>
+          <StyledTableCell key={index}>{el[1]}</StyledTableCell>
+          <StyledTableCell key={index}>{el[2]}</StyledTableCell>
+          <StyledTableCell key={index}>{el[3]}</StyledTableCell>
+          <StyledTableCell key={index}>{el[4]}</StyledTableCell>
+          <StyledTableCell key={index}>{el[5]}</StyledTableCell>
+          <StyledTableCell key={index}>{el[6]}</StyledTableCell>
+          <StyledTableCell key={index}>{el[7]}</StyledTableCell>
+        </>
+      ))}
     </StyledTableContainer>
   )
 }

@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 export const StyledTitleContainer = styled.div`
   display: flex;
   font-size: 15px;
-  width: 97.5vh;
+  width: 800px;
   height: 50px;
   cursor: pointer;
   background: aliceblue;

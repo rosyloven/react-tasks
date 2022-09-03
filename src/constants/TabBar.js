@@ -114,12 +114,12 @@ export const TABLE_DATA = [
 ]
 
 export const TABLE_TITLES = [
-  { name: 'Name', id: '1' },
-  { name: 'Height', id: '2' },
-  { name: 'Mass', id: '3' },
-  { name: 'Hair Color', id: '4' },
-  { name: 'Skin Color', id: '5' },
-  { name: 'Eye Color', id: '6' },
-  { name: 'Birth Year', id: '7' },
-  { name: 'Gender', id: '8' },
+  'Name',
+  'Height',
+  'Mass',
+  'Hair Color',
+  'Skin Color',
+  'Eye Color',
+  'Birth Year',
+  'Gender',
 ]
