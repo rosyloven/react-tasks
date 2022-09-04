@@ -1,31 +1,23 @@
 import React from 'react'
-import { TABLE_DATA, TABLE_TITLES } from '../../../../../constants/TabBar'
-import { StyledTableCell, StyledTableContainer } from './views'
+import {
+  StyledTableContentCell,
+  StyledTableContainer,
+  StyledTableHeadCell,
+} from './views'
 
-const preparedData = TABLE_DATA.map((person) => Object.values(person))
+const Table = ({ data, titles }) => {
+  const preparedData = data.map((person) => Object.values(person))
 
-console.log(preparedData)
-
-const Table = () => {
   return (
-    <StyledTableContainer>
-      {TABLE_TITLES.map((title, index) => (
-        <StyledTableCell key={index} font={'700'}>
-          {title}
-        </StyledTableCell>
+    <StyledTableContainer dataSize={data.length} titleSize={titles.length}>
+      {titles.map((title, index) => (
+        <StyledTableHeadCell key={index}>{title}</StyledTableHeadCell>
       ))}
-      {preparedData.map((el, index, array) => (
-        <>
-          <StyledTableCell key={index}>{el[0]}</StyledTableCell>
-          <StyledTableCell key={index}>{el[1]}</StyledTableCell>
-          <StyledTableCell key={index}>{el[2]}</StyledTableCell>
-          <StyledTableCell key={index}>{el[3]}</StyledTableCell>
-          <StyledTableCell key={index}>{el[4]}</StyledTableCell>
-          <StyledTableCell key={index}>{el[5]}</StyledTableCell>
-          <StyledTableCell key={index}>{el[6]}</StyledTableCell>
-          <StyledTableCell key={index}>{el[7]}</StyledTableCell>
-        </>
-      ))}
+      {preparedData.map((el) =>
+        el.map((person, index) => (
+          <StyledTableContentCell key={index}>{person}</StyledTableContentCell>
+        ))
+      )}
     </StyledTableContainer>
   )
 }

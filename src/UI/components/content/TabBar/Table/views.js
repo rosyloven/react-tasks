@@ -7,16 +7,28 @@ export const StyledTableContainer = styled.div`
   box-shadow: 0.1px 0.1px 1px #d3d3d3;
   width: 800px;
   text-align: center;
-  grid-template: repeat(10, 1fr) / repeat(8, 1fr);
+  grid-template: repeat(${({ dataSize }) => dataSize}, 1fr) / repeat(
+      ${({ titleSize }) => titleSize},
+      1fr
+    );
   align-items: center;
 `
 
-export const StyledTableCell = styled.div`
+export const StyledTableContentCell = styled.div`
   text-align: center;
   display: grid;
   width: 100px;
   height: 50px;
   align-items: center;
   border-bottom: 0.1px solid #d3d3d3;
-  font-weight: ${({ font }) => font || '400'};
+`
+
+export const StyledTableHeadCell = styled.div`
+  text-align: center;
+  display: grid;
+  width: 100px;
+  height: 50px;
+  align-items: center;
+  border-bottom: 0.1px solid #d3d3d3;
+  font-weight: 700;
 `
