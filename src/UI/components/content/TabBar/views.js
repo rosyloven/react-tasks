@@ -17,6 +17,6 @@ export const StyledTabItems = styled.div`
   justify-content: space-between;
 `
 export const StyledContent = styled.div`
-  margin-left: 25px;
-  width: 750px;
+  padding: 0 25px 0 25px;
+  width: 100%;
 `

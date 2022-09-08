@@ -7,6 +7,7 @@ const StyledAccordionContainer = styled.div`
   display: inline-flex;
   flex-flow: column;
   min-height: 300px;
+  width: 100%;
 `
 
 const Accordion = () => (
