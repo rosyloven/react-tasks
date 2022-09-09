@@ -3,11 +3,12 @@ import React from 'react'
 export const withAccordion = (Component) => {
   return () => {
     const [activeAccordion, setActiveAccordion] = React.useState(false)
+    const onSetActiveAccordion = () => setActiveAccordion(!activeAccordion)
 
     return (
       <Component
         activeAccordion={activeAccordion}
-        setActiveAccordion={setActiveAccordion}
+        onSetActiveAccordion={onSetActiveAccordion}
       />
     )
   }

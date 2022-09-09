@@ -15,11 +15,11 @@ const ARROW_URL =
 const AccordionItem = ({
   title,
   content,
-  setActiveAccordion,
   activeAccordion,
+  onSetActiveAccordion,
 }) => (
   <StyledAccordionItem
-    onClick={() => setActiveAccordion(!activeAccordion)}
+    onClick={onSetActiveAccordion}
     isActive={activeAccordion}
   >
     <StyledTitleContainer>

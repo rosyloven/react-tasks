@@ -5,5 +5,5 @@ export const WithTabs = ({ children }) => {
 
   const onSetActiveTab = (activeTab) => () => setActiveTab(activeTab)
 
-  return children(activeTab, setActiveTab, onSetActiveTab)
+  return children(activeTab, onSetActiveTab)
 }

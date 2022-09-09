@@ -12,7 +12,7 @@ import { WithTabs } from '../../../../render-props/withTabs'
 
 const TabBar = () => (
   <WithTabs>
-    {(activeTab, setActiveTab, onSetActiveTab) => (
+    {(activeTab, onSetActiveTab) => (
       <StyledTabContainer>
         <StyledTabItems>
           {TAB_DATA.map((tab) => (
