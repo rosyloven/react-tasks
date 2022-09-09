@@ -1,34 +1,37 @@
 import React from 'react'
 import {
   StyledAccordionItem,
+  StyledArrow,
   StyledContent,
   StyledTitle,
   StyledTitleContainer,
   StyledViewer,
 } from './views'
+import { withAccordion } from '../../../../../../hocs/withAccordion'
 
-const AccordionItem = ({ title, content }) => {
-  const [activeAccordion, setActiveAccordion] = React.useState(false)
+const ARROW_URL =
+  'https://cdn0.iconfinder.com/data/icons/leading-international-corporate-website-app-collec/16/Expand_accordion-512.png'
 
-  return (
-    <StyledAccordionItem
-      onClick={() => setActiveAccordion(!activeAccordion)}
-      isActive={activeAccordion}
-    >
-      <StyledTitleContainer>
-        <StyledTitle>{title}</StyledTitle>
-        <StyledViewer isActive={activeAccordion}>
-          <img
-            src='https://cdn0.iconfinder.com/data/icons/leading-international-corporate-website-app-collec/16/Expand_accordion-512.png'
-            alt='arrow'
-          />
-        </StyledViewer>
-      </StyledTitleContainer>
-      {activeAccordion && (
-        <StyledContent isActive={activeAccordion}>{content}</StyledContent>
-      )}
-    </StyledAccordionItem>
-  )
-}
+const AccordionItem = ({
+  title,
+  content,
+  activeAccordion,
+  onSetActiveAccordion,
+}) => (
+  <StyledAccordionItem
+    onClick={onSetActiveAccordion}
+    isActive={activeAccordion}
+  >
+    <StyledTitleContainer>
+      <StyledTitle>{title}</StyledTitle>
+      <StyledViewer isActive={activeAccordion}>
+        <StyledArrow src={ARROW_URL} alt='arrow' />
+      </StyledViewer>
+    </StyledTitleContainer>
+    {activeAccordion && (
+      <StyledContent isActive={activeAccordion}>{content}</StyledContent>
+    )}
+  </StyledAccordionItem>
+)
 
-export default AccordionItem
+export default withAccordion(AccordionItem)
