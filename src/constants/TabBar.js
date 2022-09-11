@@ -1,5 +1,5 @@
 export const TAB_DATA = [
-  { id: 'id_1', itemName: 'ItemOne' },
+  { id: 'id_1', itemName: 'ThemeSwitcher' },
   { id: 'id_2', itemName: 'Accordion' },
   { id: 'id_3', itemName: 'Table' },
 ]

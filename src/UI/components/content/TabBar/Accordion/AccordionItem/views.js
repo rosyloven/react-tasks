@@ -6,10 +6,22 @@ export const StyledTitleContainer = styled.div`
   width: 100%;
   height: 50px;
   cursor: pointer;
-  background: aliceblue;
   box-shadow: 0.1px 0.1px 1px #d3d3d3;
   justify-content: space-between;
   border: 0.1px solid #d3d3d3;
+  ${({ theme }) =>
+    theme === 'light' &&
+    css`
+      color: black;
+      background-color: #f6f6f6;
+    `};
+  ${({ theme }) =>
+    theme === 'dark' &&
+    css`
+      color: white;
+      background-color: rgb(52, 52, 52);
+      border: none;
+    `};
 `
 
 export const StyledAccordionItem = styled.div`
@@ -22,12 +34,23 @@ export const StyledAccordionItem = styled.div`
 `
 
 export const StyledContent = styled.div`
-  background: #f3f9ff;
   box-shadow: 0.1px 0.1px 1px #d3d3d3;
   height: 50px;
   display: flex;
   align-items: center;
   padding-left: 15px;
+  ${({ theme }) =>
+    theme === 'light' &&
+    css`
+      color: black;
+      background-color: #f6f6f6;
+    `};
+  ${({ theme }) =>
+    theme === 'dark' &&
+    css`
+      color: white;
+      background-color: rgb(52, 52, 52);
+    `};
 `
 export const StyledTitle = styled.div`
   margin: -1px 0 0 15px;
@@ -53,7 +76,12 @@ export const StyledViewer = styled.div`
 
 export const StyledArrow = styled.img`
   width: 14px;
-
+  border-radius: 5px;
+  ${({ theme }) =>
+    theme === 'dark' &&
+    css`
+      background-color: #f6f6f6;
+    `};
   ${({ isActive }) =>
     isActive &&
     css`

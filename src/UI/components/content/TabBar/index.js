@@ -9,6 +9,7 @@ import {
 import Accordion from './Accordion'
 import Table from './Table'
 import { WithTabs } from '../../../../render-props/withTabs'
+import ThemeSwitcher from './ThemeSwitcher'
 
 const TabBar = () => (
   <WithTabs>
@@ -25,7 +26,7 @@ const TabBar = () => (
           ))}
         </StyledTabItems>
         <StyledContent>
-          {activeTab === 'id_1' && <div>Content1</div>}
+          {activeTab === 'id_1' && <ThemeSwitcher />}
           {activeTab === 'id_2' && <Accordion />}
           {activeTab === 'id_3' && (
             <Table data={TABLE_DATA} titles={TABLE_TITLES} />
