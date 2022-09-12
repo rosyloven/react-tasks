@@ -3,15 +3,11 @@ import { TabBarContext } from '../../../../../context/TabBarContext'
 import { StyledSwitcherButton, StyledThemeContainer } from './views'
 
 const ThemeSwitcher = () => {
-  const { setTheme, currentTheme } = useContext(TabBarContext)
+  const { setCurrentTheme } = useContext(TabBarContext)
 
   return (
     <StyledThemeContainer>
-      <StyledSwitcherButton
-        onClick={() =>
-          currentTheme === 'light' ? setTheme('dark') : setTheme('light')
-        }
-      >
+      <StyledSwitcherButton onClick={setCurrentTheme}>
         SwitchTheme
       </StyledSwitcherButton>
     </StyledThemeContainer>
