@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Content from './UI/components/content'
+import { TabBarContext } from './context/TabBarContext'
 
 const AppWrapper = styled.div`
   width: 100%;
