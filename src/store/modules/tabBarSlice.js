@@ -8,11 +8,11 @@ export const tabBarSlice = createSlice({
   name: 'tabBar',
   initialState,
   reducers: {
-    setActiveTabReducer: (state, action) => {
+    setActiveTabAction: (state, action) => {
       state.activeTab = action.payload
     },
   },
 })
 
-export const { setActiveTabReducer } = tabBarSlice.actions
+export const { setActiveTabAction } = tabBarSlice.actions
 export default tabBarSlice.reducer

@@ -23,6 +23,7 @@ const TabBar = () => {
                 onSetActiveTab={onSetActiveTab(tab.id)}
                 name={tab.itemName}
                 key={tab.id}
+                activeTab={activeTab}
               />
             ))}
           </StyledTabItems>
