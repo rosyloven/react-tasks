@@ -12,8 +12,6 @@ import { WithTabs } from '../../../../render-props/withTabs'
 import ThemeSwitcher from './ThemeSwitcher'
 
 const TabBar = () => {
-  // const activeTabb = useSelector((state) => state.tabBar.activeTab)
-
   return (
     <WithTabs>
       {(onSetActiveTab, activeTab) => (
