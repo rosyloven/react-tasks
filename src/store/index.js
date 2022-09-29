@@ -3,7 +3,7 @@ import { tabBarSlice } from './modules/tabBarSlice'
 
 const store = configureStore({
   reducer: {
-    tabBar: tabBarSlice,
+    tabBar: tabBarSlice.reducer,
   },
 })
 

@@ -1,16 +1,11 @@
 import React from 'react'
+import { useContext } from 'react'
+import { TabBarContext } from '../context/TabBarContext'
 
 export const withAccordion = (Component) => {
   return (props) => {
-    const [activeAccordion, setActiveAccordion] = React.useState(false)
-    const onSetActiveAccordion = () => setActiveAccordion(!activeAccordion)
+    const { currentTheme } = useContext(TabBarContext)
 
-    return (
-      <Component
-        activeAccordion={activeAccordion}
-        onSetActiveAccordion={onSetActiveAccordion}
-        {...props}
-      />
-    )
+    return <Component currentTheme={currentTheme} {...props} />
   }
 }

@@ -13,7 +13,12 @@ const StyledAccordionContainer = styled.div`
 const Accordion = () => (
   <StyledAccordionContainer>
     {ACCORDION_DATA.map((acrd) => (
-      <AccordionItem key={acrd.id} title={acrd.name} content={acrd.content} />
+      <AccordionItem
+        key={acrd.id}
+        id={acrd.id}
+        title={acrd.name}
+        content={acrd.content}
+      />
     ))}
   </StyledAccordionContainer>
 )

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import {
   StyledAccordionItem,
   StyledArrow,
@@ -8,22 +8,22 @@ import {
   StyledViewer,
 } from './views'
 import { withAccordion } from '../../../../../../hocs/withAccordion'
-import { TabBarContext } from '../../../../../../context/TabBarContext'
+import { connect, useSelector } from 'react-redux'
+import { setActiveAccordionAction } from '../../../../../../store/modules/tabBarSlice'
+import { useDispatch } from 'react-redux'
 
 const ARROW_URL =
   'https://cdn0.iconfinder.com/data/icons/leading-international-corporate-website-app-collec/16/Expand_accordion-512.png'
 
-const AccordionItem = ({
-  title,
-  content,
-  activeAccordion,
-  onSetActiveAccordion,
-}) => {
-  const { currentTheme } = useContext(TabBarContext)
+const AccordionItem = ({ title, content, currentTheme, id }) => {
+  const activeAccordion = useSelector((state) => state.tabBar.activeAccordion)
+  const dispatch = useDispatch()
 
   return (
     <StyledAccordionItem
-      onClick={onSetActiveAccordion}
+      onClick={() => {
+        dispatch(setActiveAccordionAction(id))
+      }}
       isActive={activeAccordion}
     >
       <StyledTitleContainer theme={currentTheme}>
@@ -32,7 +32,7 @@ const AccordionItem = ({
           <StyledArrow theme={currentTheme} src={ARROW_URL} alt='arrow' />
         </StyledViewer>
       </StyledTitleContainer>
-      {activeAccordion && (
+      {activeAccordion.includes(id) && (
         <StyledContent theme={currentTheme} isActive={activeAccordion}>
           {content}
         </StyledContent>
@@ -41,4 +41,11 @@ const AccordionItem = ({
   )
 }
 
-export default withAccordion(AccordionItem)
+export default connect(
+  (state) => ({ activeAccordion: state.activeAccordion }),
+  (dispatch) => ({
+    onSetActiveAccordion: () => {
+      dispatch(setActiveAccordionAction())
+    },
+  })
+)(withAccordion(AccordionItem))

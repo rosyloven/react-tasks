@@ -20,12 +20,10 @@ const StyledTabBarItem = styled.div`
     `};
 `
 
-const TabBarItem = ({ name, onSetActiveTab, isActive }) => {
-  return (
-    <StyledTabBarItem onClick={onSetActiveTab} isActive={isActive}>
-      {name}
-    </StyledTabBarItem>
-  )
-}
+const TabBarItem = ({ name, isActive, onSetActiveTab, id }) => (
+  <StyledTabBarItem onClick={() => onSetActiveTab(id)} isActive={isActive}>
+    {name}
+  </StyledTabBarItem>
+)
 
 export default TabBarItem
