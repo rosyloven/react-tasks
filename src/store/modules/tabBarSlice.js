@@ -13,9 +13,13 @@ export const tabBarSlice = createSlice({
       state.activeTab = action.payload
     },
     setActiveAccordionAction: (state, action) => {
-      state.activeAccordion.includes(action.payload)
-        ? state.activeAccordion.splice(-1, 1)
-        : state.activeAccordion.push(action.payload)
+      if (state.activeAccordion.includes(action.payload)) {
+        state.activeAccordion = state.activeAccordion.filter(
+          (item) => item !== action.payload
+        )
+      } else {
+        state.activeAccordion.push(action.payload)
+      }
     },
   },
 })

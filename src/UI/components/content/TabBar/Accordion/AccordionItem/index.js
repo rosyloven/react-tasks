@@ -8,32 +8,35 @@ import {
   StyledViewer,
 } from './views'
 import { withAccordion } from '../../../../../../hocs/withAccordion'
-import { connect, useSelector } from 'react-redux'
+import { connect } from 'react-redux'
 import { setActiveAccordionAction } from '../../../../../../store/modules/tabBarSlice'
-import { useDispatch } from 'react-redux'
 
 const ARROW_URL =
   'https://cdn0.iconfinder.com/data/icons/leading-international-corporate-website-app-collec/16/Expand_accordion-512.png'
 
-const AccordionItem = ({ title, content, currentTheme, id }) => {
-  const activeAccordion = useSelector((state) => state.tabBar.activeAccordion)
-  const dispatch = useDispatch()
+const AccordionItem = ({
+  title,
+  content,
+  currentTheme,
+  id,
+  activeAccordion,
+  onSetActiveAccordion,
+}) => {
+  const isActiveCondition = activeAccordion.includes(id)
 
   return (
     <StyledAccordionItem
-      onClick={() => {
-        dispatch(setActiveAccordionAction(id))
-      }}
-      isActive={activeAccordion}
+      onClick={onSetActiveAccordion}
+      isActive={isActiveCondition}
     >
       <StyledTitleContainer theme={currentTheme}>
         <StyledTitle>{title}</StyledTitle>
-        <StyledViewer isActive={activeAccordion}>
+        <StyledViewer isActive={isActiveCondition}>
           <StyledArrow theme={currentTheme} src={ARROW_URL} alt='arrow' />
         </StyledViewer>
       </StyledTitleContainer>
-      {activeAccordion.includes(id) && (
-        <StyledContent theme={currentTheme} isActive={activeAccordion}>
+      {isActiveCondition && (
+        <StyledContent theme={currentTheme} isActive={isActiveCondition}>
           {content}
         </StyledContent>
       )}
@@ -42,10 +45,10 @@ const AccordionItem = ({ title, content, currentTheme, id }) => {
 }
 
 export default connect(
-  (state) => ({ activeAccordion: state.activeAccordion }),
-  (dispatch) => ({
+  (state) => ({ activeAccordion: state.tabBar.activeAccordion }),
+  (dispatch, { id }) => ({
     onSetActiveAccordion: () => {
-      dispatch(setActiveAccordionAction())
+      dispatch(setActiveAccordionAction(id))
     },
   })
 )(withAccordion(AccordionItem))
