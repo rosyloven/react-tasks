@@ -13,7 +13,7 @@ import ThemeSwitcher from './ThemeSwitcher'
 
 const TabBar = () => (
   <WithTabs>
-    {(activeTab, onSetActiveTab) => (
+    {(onSetActiveTab, activeTab) => (
       <StyledTabContainer>
         <StyledTabItems>
           {TAB_DATA.map((tab) => (
@@ -22,6 +22,7 @@ const TabBar = () => (
               onSetActiveTab={onSetActiveTab(tab.id)}
               name={tab.itemName}
               key={tab.id}
+              id={tab.id}
             />
           ))}
         </StyledTabItems>
